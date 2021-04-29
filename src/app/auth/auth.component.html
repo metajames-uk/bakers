@@ -1,2 +1,17 @@
-<p>auth works!</p>
-<router-outlet>hello</router-outlet>
+<div class="login-container">
+  <form class="login-form" [formGroup]="form">
+    <div class="login-form-field-container">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" />
+      </mat-form-field>
+    </div>
+    <div class="login-form-field-container">
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" />
+      </mat-form-field>
+    </div>
+  </form>
+  <button mat-raised-button (click)="submitForm()">Save</button>
+</div>
