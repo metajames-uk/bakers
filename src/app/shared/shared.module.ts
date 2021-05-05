@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { RouterModule } from '@angular/router';
 import { NavigationComponent } from './components/navigation/navigation.component';
 @NgModule({
   imports: [
@@ -12,6 +13,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
+    RouterModule,
   ],
   declarations: [NavigationComponent],
   exports: [
