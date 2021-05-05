@@ -1,17 +1,25 @@
 <div class="login-container">
-  <form class="login-form" [formGroup]="form">
-    <div class="login-form-field-container">
-      <mat-form-field>
-        <mat-label>Email</mat-label>
-        <input matInput type="email" formControlName="email" />
-      </mat-form-field>
-    </div>
-    <div class="login-form-field-container">
-      <mat-form-field>
-        <mat-label>Password</mat-label>
-        <input matInput type="password" formControlName="password" />
-      </mat-form-field>
-    </div>
-  </form>
-  <button mat-raised-button (click)="submitForm()">Save</button>
+  <div class="form-container">
+    <mat-button-toggle-group [(ngModel)]="formType">
+      <mat-button-toggle value="login">Login</mat-button-toggle>
+      <mat-button-toggle value="signup">Sign up</mat-button-toggle>
+    </mat-button-toggle-group>
+    <form class="login-form" [formGroup]="form">
+      <div class="login-form-field-container">
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" />
+        </mat-form-field>
+      </div>
+      <div class="login-form-field-container">
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" />
+        </mat-form-field>
+      </div>
+    </form>
+    <button mat-raised-button (click)="submitForm()" [disabled]="form.invalid">
+      Submit
+    </button>
+  </div>
 </div>
